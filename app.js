@@ -1,6 +1,7 @@
 const app = {
     data () {
         return {
+            title: 'Curso de Vue 3',
             name: 'Danilo',
             lastName: 'Nascimento dos Santos',
             products: [
@@ -16,7 +17,13 @@ const app = {
                     image: './img/filme01.jpg',
                     stars: 5,
                 }
-            ]
+            ],
+            cart: []
+        }
+    },
+    methods: {
+        addCart (product) {
+            this.cart.push(product)
         }
     }
 }
