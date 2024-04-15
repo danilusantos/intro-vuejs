@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/main.css">
     <title>Curso de VueJS 3</title>
 </head>
 <body>
@@ -36,15 +37,16 @@
                     </span>
                     <br>
                     <!-- <a href="#" v-on:click.prevent="title: 'Vue3'" -->
-                    <button
+                    <!-- <button
                         type="button"
                         @click="removeCart(product)"
                         v-if="inCart(product)"
-                        >REMOVE CART</button>
+                        >REMOVE CART</button> -->
                     <button
                         type="button"
                         v-on:click="addCart(product)"
-                        v-else
+                        :disabled="inCart(product)"
+                        :class="['color', 'button-enabled', {'button-disabled' : inCart(product)}]"
                         >ADD CART</button>
                 </li>
             </ul>
