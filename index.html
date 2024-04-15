@@ -8,7 +8,9 @@
 <body>
     <div id="app">
         <h1>{{ title }}</h1>
-        <p>{{ name }} {{ lastName }}</p>
+
+        <!-- Uso de propriedade computada fullName -->
+        <p>{{ fullName }}</p>
 
         <hr>
 
@@ -26,7 +28,16 @@
                 </span>
                 <br>
                 <!-- <a href="#" v-on:click.prevent="title: 'Vue3'" -->
-                <button type="button" v-on:click="addCart(product)">ADD CART</button>
+                <button
+                    type="button"
+                    @click="removeCart(product)"
+                    v-if="inCart(product)"
+                >REMOVE CART</button>
+                <button
+                    type="button"
+                    v-on:click="addCart(product)"
+                    v-else
+                >ADD CART</button>
             </li>
         </ul>
     </div>

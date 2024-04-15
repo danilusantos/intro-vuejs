@@ -21,9 +21,22 @@ const app = {
             cart: []
         }
     },
+    computed: {
+        fullName () {
+            return this.name + ' ' + this.lastName
+        }
+    },
     methods: {
         addCart (product) {
             this.cart.push(product)
+        },
+
+        inCart (product) {
+            return this.cart.indexOf(product) != -1
+        },
+
+        removeCart (product) {
+            this.cart = this.cart.filter((prod, index) => product != prod)
         }
     }
 }
