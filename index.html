@@ -7,39 +7,49 @@
 </head>
 <body>
     <div id="app">
-        <h1>{{ title }}</h1>
+        <section
+            class="main"
+            :style="styles"
+            >
+            <label for="themeBlack">
+                <input type="checkbox" :checked="themeBlack" @click="toogleTheme" name="themeBlack" id="themeBlack"> Tema Escuro
+            </label>
 
-        <!-- Uso de propriedade computada fullName -->
-        <p>{{ fullName }}</p>
+            <h1>{{ title }}</h1>
 
-        <hr>
+            <!-- Uso de propriedade computada fullName -->
+            <p>{{ fullName }}</p>
 
-        <h3>Carrinho ({{ cart.length }})</h3>
+            <hr>
 
-        <ul id="listaDeProdutos">
-            <li v-for="(product, index) in products" :key="index">
-                <p>{{ product.title }}</p>
-                <img v-bind:src="product.image" v-bind:alt="product.title" style="max-width: 150px;">
-                <br>
-                <span>
-                    <strong v-if="product.stars > 0">
-                        {{ product.stars }}
-                    </strong>
-                </span>
-                <br>
-                <!-- <a href="#" v-on:click.prevent="title: 'Vue3'" -->
-                <button
-                    type="button"
-                    @click="removeCart(product)"
-                    v-if="inCart(product)"
-                >REMOVE CART</button>
-                <button
-                    type="button"
-                    v-on:click="addCart(product)"
-                    v-else
-                >ADD CART</button>
-            </li>
-        </ul>
+            <h3>Carrinho ({{ cart.length }})</h3>
+
+            <ul id="listaDeProdutos">
+                <li v-for="(product, index) in products" :key="index">
+                    <p>{{ product.title }}</p>
+                    <img v-bind:src="product.image" v-bind:alt="product.title" style="max-width: 150px;">
+                    <br>
+                    <span>
+                        <strong v-if="product.stars > 0">
+                            {{ product.stars }}
+                        </strong>
+                    </span>
+                    <br>
+                    <!-- <a href="#" v-on:click.prevent="title: 'Vue3'" -->
+                    <button
+                        type="button"
+                        @click="removeCart(product)"
+                        v-if="inCart(product)"
+                        >REMOVE CART</button>
+                    <button
+                        type="button"
+                        v-on:click="addCart(product)"
+                        v-else
+                        >ADD CART</button>
+                </li>
+            </ul>
+        </section>
+
     </div>
     <script src="https://unpkg.com/vue@latest"></script>
     <script src="./app.js"></script>

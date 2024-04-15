@@ -18,7 +18,14 @@ const app = {
                     stars: 5,
                 }
             ],
-            cart: []
+            cart: [],
+            // textColor: '#fafafa',
+            // bgColor: '#1c1c1c'
+            styles: {
+                backgroundColor: '#1c1c1c',
+                color: '#fafafa'
+            },
+            themeBlack: true
         }
     },
     computed: {
@@ -37,6 +44,20 @@ const app = {
 
         removeCart (product) {
             this.cart = this.cart.filter((prod, index) => product != prod)
+        },
+
+        toogleTheme () {
+            this.themeBlack = !this.themeBlack;
+
+            if (this.themeBlack) {
+                this.styles = {
+                    backgroundColor: '#1c1c1c',
+                    color: '#fafafa'
+                }
+            } else {
+                this.styles.backgroundColor = '#fafafa'
+                this.styles.color = '#1c1c1c'
+            }
         }
     }
 }
