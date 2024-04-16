@@ -8,7 +8,7 @@ const productDetail = {
                 {{ product.stars }}
             </strong>
         </span>
-
+        <br>
         <button
             type="button"
             v-on:click="addCart(product)"

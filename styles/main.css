@@ -4,6 +4,20 @@ body {
     box-sizing: border-box;
 }
 
+.main {
+    width: 100%;
+    min-height: 100vh;
+}
+
+#listaDeProdutos {
+    display: inline-flex;
+    list-style: none;
+}
+
+#listaDeProdutos li {
+    margin: 10px;
+}
+
 .color {
     color: pink !important
 }
