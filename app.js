@@ -1,4 +1,4 @@
-const app = {
+const myApp = {
     data () {
         return {
             title: 'Curso de Vue 3',
@@ -62,4 +62,5 @@ const app = {
     }
 }
 
-Vue.createApp(app).mount('#app')
+const app = Vue.createApp(myApp)
+

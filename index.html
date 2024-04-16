@@ -20,34 +20,15 @@
 
             <!-- Uso de propriedade computada fullName -->
             <p>{{ fullName }}</p>
-
             <hr>
-
             <h3>Carrinho ({{ cart.length }})</h3>
-
             <ul id="listaDeProdutos">
                 <li v-for="(product, index) in products" :key="index">
-                    <p>{{ product.title }}</p>
-                    <img v-bind:src="product.image" v-bind:alt="product.title" style="max-width: 150px;">
+                    <product-detail
+                        :product="product"
+                        :product-in-cart="inCart(product)"
+                        ></product-detail>
                     <br>
-                    <span>
-                        <strong v-if="product.stars > 0">
-                            {{ product.stars }}
-                        </strong>
-                    </span>
-                    <br>
-                    <!-- <a href="#" v-on:click.prevent="title: 'Vue3'" -->
-                    <!-- <button
-                        type="button"
-                        @click="removeCart(product)"
-                        v-if="inCart(product)"
-                        >REMOVE CART</button> -->
-                    <button
-                        type="button"
-                        v-on:click="addCart(product)"
-                        :disabled="inCart(product)"
-                        :class="['color', 'button-enabled', {'button-disabled' : inCart(product)}]"
-                        >ADD CART</button>
                 </li>
             </ul>
         </section>
@@ -55,5 +36,9 @@
     </div>
     <script src="https://unpkg.com/vue@latest"></script>
     <script src="./app.js"></script>
+    <script src="./components/ProductDetail.js"></script>
+    <script>
+        app.mount('#app')
+    </script>
 </body>
 </html>
