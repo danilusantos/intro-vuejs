@@ -13,7 +13,7 @@
             :style="styles"
             >
             <label for="themeBlack">
-                <input type="checkbox" :checked="themeBlack" @click="toogleTheme" name="themeBlack" id="themeBlack"> Tema Escuro
+                <input type="checkbox" :checked="themeBlack" @click="toggleTheme" name="themeBlack" id="themeBlack"> Tema Escuro
             </label>
 
             <h1>{{ title }}</h1>
@@ -27,6 +27,7 @@
                     <product-detail
                         :product="product"
                         :product-in-cart="inCart(product)"
+                        @add-prod-cart="addCart"
                         ></product-detail>
                     <br>
                 </li>

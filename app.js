@@ -46,7 +46,7 @@ const myApp = {
             this.cart = this.cart.filter((prod, index) => product != prod)
         },
 
-        toogleTheme () {
+        toggleTheme () {
             this.themeBlack = !this.themeBlack;
 
             if (this.themeBlack) {
